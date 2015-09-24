@@ -1,6 +1,6 @@
 ﻿namespace HomeCinema.Entities
 {
-    internal class UserRole : IEntityBase
+    public class UserRole : IEntityBase
     {
         public int ID { get; set; }
         public int UserId { get; set; }

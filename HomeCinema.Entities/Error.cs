@@ -2,7 +2,7 @@
 
 namespace HomeCinema.Entities
 {
-    internal class Error : IEntityBase
+    public class Error : IEntityBase
     {
         public int ID { get; set; }
         public string Message { get; set; }

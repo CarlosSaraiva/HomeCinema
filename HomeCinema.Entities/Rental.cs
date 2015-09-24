@@ -2,7 +2,7 @@
 
 namespace HomeCinema.Entities
 {
-    public class Rental
+    public class Rental : IEntityBase
     {
         public int ID { get; set; }
         public int CustomerId { get; set; }

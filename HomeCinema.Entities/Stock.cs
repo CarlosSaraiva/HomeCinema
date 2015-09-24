@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace HomeCinema.Entities
 {
-    public class Stock
+    public class Stock : IEntityBase
     {
         public Stock()
         {

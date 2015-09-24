@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace HomeCinema.Entities
 {
-    public class Movie
+    public class Movie : IEntityBase
     {
         public Movie()
         {
@@ -19,7 +19,7 @@ namespace HomeCinema.Entities
         public string Writer { get; set; }
         public string Producer { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public byte rating { get; set; }
+        public byte Rating { get; set; }
         public string TrailerURI { get; set; }
         public virtual ICollection<Stock> Stocks { get; set; }
     }
