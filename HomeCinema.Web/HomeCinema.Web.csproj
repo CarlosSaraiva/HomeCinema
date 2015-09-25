@@ -172,12 +172,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacWebapiConfig.cs" />
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infranstructure\MessageHandlers\HomeCinemaAuthHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +199,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\spa\" />
+    <Folder Include="Scripts\Vendors\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
