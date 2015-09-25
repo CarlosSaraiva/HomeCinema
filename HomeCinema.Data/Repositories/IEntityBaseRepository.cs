@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HomeCinema.Data.Repositories
 {
-    internal interface IEntityBaseRepository<T> where T : class, IEntityBase, new()
+    public interface IEntityBaseRepository<T> where T : class, IEntityBase, new()
     {
         IQueryable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties);
 
