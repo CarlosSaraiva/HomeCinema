@@ -1,32 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
+using HomeCinema.Web.Infranstructure.Extensions;
 
 namespace HomeCinema.Web.Infranstructure.MessageHandlers
 {
     internal class HomeCinemaAuthHandler : DelegatingHandler
     {
-        private IEnumerable<string> authHeaderValues = null;
+        private IEnumerable<string> _authHeaderValues;
 
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             try
             {
-                request.Headers.TryGetValues("Authorization", out authHeaderValues);
-                if (authHeaderValues == null)
+                request.Headers.TryGetValues("Authorization", out _authHeaderValues);
+                if (_authHeaderValues == null)
                 {
                     return base.SendAsync(request, cancellationToken);
                 }
 
-                var tokens = authHeaderValues.FirstOrDefault();
-                tokens = tokens.Replace("Basic", "").Trim();
+                var tokens = _authHeaderValues.FirstOrDefault();
+                tokens = tokens?.Replace("Basic", "").Trim();
 
                 if (!string.IsNullOrEmpty(tokens))
                 {
@@ -38,9 +38,9 @@ namespace HomeCinema.Web.Infranstructure.MessageHandlers
 
                     if (membershipCtx.User != null)
                     {
-                        IPrincipal principal = membershipCtx.Principal;
+                        var principal = membershipCtx.Principal;
                         Thread.CurrentPrincipal = principal;
-                        HttpContenxt.Current.User = principal;
+                        HttpContext.Current.User = principal;
                     }
                     else
                     {
