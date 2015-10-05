@@ -19,6 +19,8 @@
                 controller: 'registerCtrl'
             })
             .when('/customers', {
+                templateUrl: '',
+                controller: ''
             });
     }
 })();
