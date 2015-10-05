@@ -1,0 +1,20 @@
+﻿<div id="sidebar" class="sidebar-offcanvas">
+    <div class="col-md-12">
+        <h3></h3>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="nav-divider"></li>
+            <li class="nav-divider"><a ng-href="#customers/">Customers</a><i class="fa fa-users fa-fw pull-right"></i></li>
+            <li><a ng-href="#/customers/register">Register costumer <i class="fa fa-user-plus fa-fw pull-right"></i></a></li>
+            <li class="nav-divider"></li>
+            <li><a href="" ng-href="#/movies/">Movies<i class="fa fa-film fa-fw pull-right"></i></a></li>
+            <li><a href="" ng-href="#/movies/add">Add Movie<i class="fa fa-plus-circle fa-fw pull-right"></i></a></li>
+            <li class="nav-divider"></li>
+            <li><a href="" ng-href="#/rental">Rental History<i class="fa fa-plus-circle fa-fw pull-right"></i></a></li>
+            <li class="nav-divider"></li>
+            <li><a href="" ng-href="#/rental">Rental History<i class="fa fa-lean-pub fa-fw pull-right"></i></a></li>
+            <li class="nav-divider"></li>
+            <li><a href="" ng-href="#/login" ng-if="!userData.isUserLoggedIn">Login<i class="fa fa-sign-in fa-fw pull-right"></i></a></li>
+            <li><button type="button" class="btn btn-danger btn-sm" ng-click="logout();" ng-if="userData.isUserLoggedIn">Logout<i class="fa fa-sign-out fa-fw pull-right"></i></button></li>
+        </ul>
+    </div>
+</div>

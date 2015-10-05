@@ -213,6 +213,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\spa\app.js" />
+    <Content Include="Scripts\spa\layout\sidebar.html" />
     <Content Include="Scripts\spa\modules\common.core.js" />
     <Content Include="Scripts\Vendors\angucomplete-alt\.bower.json" />
     <Content Include="Scripts\Vendors\angucomplete-alt\angucomplete-alt.css" />
@@ -651,6 +652,7 @@
     <Content Include="Scripts\Vendors\raty\lib\fonts\raty.woff" />
     <Content Include="Scripts\Vendors\raty\README.md" />
     <Content Include="Scripts\Vendors\tg-angular-validator\CONTRIBUTING.md" />
+    <Content Include="Scripts\spa\layout\sideBar.directive.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

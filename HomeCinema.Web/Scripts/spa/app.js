@@ -19,8 +19,32 @@
                 controller: 'registerCtrl'
             })
             .when('/customers', {
-                templateUrl: '',
-                controller: ''
-            });
+                templateUrl: 'scripts/spa/customers/index.html',
+                controller: 'customerCtrl'
+            })
+            .when('/customers/register', {
+                templateUrl: 'scripts/spa/customers/register.html',
+                controller: 'customerRegCtrl'
+            })
+            .when('/movies', {
+                templateUrl: 'scripts/spa/movies/index.html',
+                controller: 'moviesCtrl'
+            })
+            .when('/movies/add', {
+                templateUrl: 'scripts/spa/movies/add.html',
+                controller: 'movieAddCtrl'
+            })
+            .when('/movies/:id', {
+                templateUrl: 'scripts/spa/movies/details.html',
+                controller: 'movieDetailsCtrl'
+            })
+            .when('/movies/edit/:id', {
+                templateUrl: 'scripts/spa/movies/edit.html',
+                controller: 'movieEditCtrl'
+            })
+            .when('/rental', {
+                templateUrl: 'scripts/spa/rental/index.html',
+                controller: 'rentStatsCtrl'
+            }).otherwise({ redirectTo: '/' });
     }
 })();
