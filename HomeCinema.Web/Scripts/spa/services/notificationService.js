@@ -1,5 +1,27 @@
 ﻿(function (app) {
-    app.factory('notificationService'), notificationService);
+    function displaySuccess(message) {
+        toastr.success(message);
+    }
+
+    function displayError(error) {
+        if (Array.isArray(error)) {
+            error.forEach(function (err) {
+                toastr.error(err);
+            });
+        } else {
+            toastr.error(error);
+        }
+    }
+
+    function displayWarning(message) {
+        toastr.warnings(message);
+    }
+
+    function displayInfo(message) {
+        toastr.info(message);
+    }
+
+    app.factory(('notificationService'), notificationService);
 
     function notificationService() {
         toastr.options = {
@@ -19,27 +41,5 @@
         };
 
         return service;
-    }
-
-    function displaySuccess(message) {
-        toastr.success(message);
-    }
-
-    function displayError(error) {
-        if (Array.isArray(error)) {
-            error.forEach(function(err) {
-                toastr.error(err);
-            });
-        } else {
-            toastr.error(error);
-        }
-    }
-
-    function displayWarning(message) {
-        toastr.warnings(message);
-    }
-
-    function displayInfo(message) {
-        toastr.info(message);
     }
 })(angular.module('common.core'));
